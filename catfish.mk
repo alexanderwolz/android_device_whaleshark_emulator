@@ -5,7 +5,7 @@
 #   - build/target/product/sdk_phone_arm64.mk
 #   - build/target/product/emulator_vendor.mk
 
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/advancedFeatures.ini.arm:advancedFeatures.ini
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/advancedFeatures.ini:advancedFeatures.ini
 
 PRODUCT_SYSTEM_EXT_PROPERTIES += ro.setupwizard.mode?=OPTIONAL
 
@@ -19,13 +19,13 @@ $(call inherit-product, device/generic/car/emulator/rotary/car_rotary.mk)
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # All components inherited here go to system image
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk) #enable 64 bit zygote
-$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_system.mk) #generic handheld system
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk) # enable 64 bit zygote
+$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_system.mk) # generic handheld system
 
 # All components inherited here go to vendor or vendor_boot image
-$(call inherit-product-if-exists, device/generic/goldfish/arm64-vendor.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/emulator_vendor.mk) #emulator-related vendor
-$(call inherit-product, $(SRC_TARGET_DIR)/board/generic_arm64/device.mk) #kernel
+$(call inherit-product-if-exists, device/generic/goldfish/arm64-vendor.mk) # goldfish fstab
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulator_vendor.mk) # emulator modules
+$(call inherit-product, $(SRC_TARGET_DIR)/board/generic_arm64/device.mk) # kernel
 
 # Enable mainline checking for excat this product name
 ifeq (aosp_arm64,$(TARGET_PRODUCT))

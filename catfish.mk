@@ -1,10 +1,11 @@
 # Copyright (C) 2022 Alexander Wolz, mail@alexanderwolz.de
 # based on:
 #   - device/generic/car/emulator/aosp_car_emulator.mk
-#   - build/target/aosp_arm64.mk
-#   - build/target/sdk_phone_arm64.mk
+#   - build/target/product/aosp_arm64.mk
+#   - build/target/product/sdk_phone_arm64.mk
+#   - build/target/product/emulator_vendor.mk
 
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/advancedFeatures.ini:advancedFeatures.ini
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/advancedFeatures.ini.arm:advancedFeatures.ini
 
 PRODUCT_SYSTEM_EXT_PROPERTIES += ro.setupwizard.mode?=OPTIONAL
 
@@ -23,8 +24,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_system.mk) #generic ha
 
 # All components inherited here go to vendor or vendor_boot image
 $(call inherit-product-if-exists, device/generic/goldfish/arm64-vendor.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/emulator_vendor.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/board/emulator_arm64/device.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulator_vendor.mk) #emulator-related vendor
+$(call inherit-product, $(SRC_TARGET_DIR)/board/generic_arm64/device.mk) #kernel
 
 # Enable mainline checking for excat this product name
 ifeq (aosp_arm64,$(TARGET_PRODUCT))

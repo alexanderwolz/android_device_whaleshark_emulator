@@ -2,8 +2,6 @@
 
 ## Installation
 
-checkout this repository to ```$AOSP_HOME/device/alexanderwolz/catfish```
+1. checkout this repository to ```$AOSP_HOME/device/alexanderwolz/catfish```
 
-```lunch catfish-eng```
-
-````m -j$(nproc --all)```
+2. Build device with ```lunch catfish-eng``` and ```m -j$(nproc --all)```

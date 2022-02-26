@@ -1,41 +1,30 @@
 # Copyright (C) 2022 Alexander Wolz, mail@alexanderwolz.de
 # based on:
-#   - device/generic/car/emulator/aosp_car_emulator.mk
-#   - build/target/product/aosp_arm64.mk
 #   - build/target/product/sdk_phone_arm64.mk
-#   - build/target/product/emulator_vendor.mk
 
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/advancedFeatures.ini:advancedFeatures.ini
-
-PRODUCT_SYSTEM_EXT_PROPERTIES += ro.setupwizard.mode?=OPTIONAL
-
-# derive from automotive config
-$(call inherit-product, device/generic/car/common/car.mk)
-
-# This overrides device/generic/car/common/car.mk
-$(call inherit-product, device/generic/car/emulator/audio/car_emulator_audio.mk)
-$(call inherit-product, device/generic/car/emulator/rotary/car_rotary.mk)
-
+QEMU_USE_SYSTEM_EXT_PARTITIONS := true
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-# All components inherited here go to system image
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk) # enable 64 bit zygote
-$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_system.mk) # generic handheld system
-
-# All components inherited here go to vendor or vendor_boot image
-$(call inherit-product-if-exists, device/generic/goldfish/arm64-vendor.mk) # goldfish fstab
-$(call inherit-product, $(SRC_TARGET_DIR)/product/emulator_vendor.mk) # emulator modules
-$(call inherit-product, $(SRC_TARGET_DIR)/board/generic_arm64/device.mk) # kernel
-
-# Enable mainline checking for excat this product name
-ifeq (aosp_arm64,$(TARGET_PRODUCT))
+# Enable mainline checking for exact this product name
+ifeq (sdk_phone_arm64,$(TARGET_PRODUCT))
 PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := relaxed
 endif
 
-# Special settings for GSI releasing
-ifeq (aosp_arm64,$(TARGET_PRODUCT))
-$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_release.mk)
-endif
+# All components inherited here go to system image
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_system.mk)
+
+# All components inherited here go to system_ext image
+$(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_system_ext.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
+
+# All components inherited here go to product image
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_product.mk)
+
+# All components inherited here go to vendor or vendor_boot image
+$(call inherit-product-if-exists, device/generic/goldfish/arm64-vendor.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulator_vendor.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/board/emulator_arm64/device.mk)
 
 # Define the host tools and libs that are parts of the SDK.
 $(call inherit-product, sdk/build/product_sdk.mk)
@@ -45,3 +34,8 @@ PRODUCT_NAME := catfish
 PRODUCT_DEVICE := catfish
 PRODUCT_BRAND := alexanderwolz
 PRODUCT_MODEL := Catfish Android
+
+# Disable <uses-library> checks for SDK product. It lacks some libraries (e.g.
+# RadioConfigLib), which makes it impossible to translate their module names to
+# library name, so the check fails.
+PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true

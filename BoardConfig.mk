@@ -1,23 +1,20 @@
 # Copyright (C) 2022 Alexander Wolz, mail@alexanderwolz.de
 # based on:
-# 	- build/target/board/generic_arm64/BoardConfig.mk
-# 	- build/target/board/emulator_arm64/BoardConfig.mk
+# 	- device/generic/goldfish/64bitonly/BoardConfig.mk
 
 # arm64 emulator specific definitions
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_VARIANT := generic
 TARGET_CPU_ABI := arm64-v8a
+
 TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_VARIANT := generic
-
-TARGET_PRELINK_MODULE := false
 
 include build/make/target/board/BoardConfigGsiCommon.mk
 include build/make/target/board/BoardConfigEmuCommon.mk
 
-TARGET_NO_KERNEL := false
-
+BOARD_BOOTIMAGE_PARTITION_SIZE := 0x02000000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 576716800
 
 # Wifi.

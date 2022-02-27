@@ -1,13 +1,12 @@
 # Copyright (C) 2022 Alexander Wolz, mail@alexanderwolz.de
 # based on:
-# 	- device/generic/goldfish/64bitonly/BoardConfig.mk
+# 	- device/generic/goldfish/emulator64_arm64/BoardConfig.mk
 
 # arm64 emulator specific definitions
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_VARIANT := generic
 TARGET_CPU_ABI := arm64-v8a
-
 TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_VARIANT := generic
 

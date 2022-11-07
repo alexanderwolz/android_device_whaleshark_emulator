@@ -1,4 +1,4 @@
-# Catfish - an AOSP12 Emulator Device
+# Catfish - an AOSP13 Automotive Emulator Device
 
 This device is intented to be run in an Android Emulator on an Apple MacBook Pro with M1 processor (ARM64)
 

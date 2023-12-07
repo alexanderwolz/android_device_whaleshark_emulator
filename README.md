@@ -1,7 +1,7 @@
-# Catfish - an AOSP13 Automotive Emulator Device
+# Catfish - an AOSP14 Automotive Emulator Device
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/alexanderwolz/android_device_catfish)
-![GitHub](https://img.shields.io/badge/aosp-13-orange)
+![GitHub](https://img.shields.io/badge/aosp-14-orange)
 ![GitHub](https://img.shields.io/badge/arch-arm64v8-orange)
 ![GitHub](https://img.shields.io/github/license/alexanderwolz/android_device_catfish)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/alexanderwolz/android_device_catfish)

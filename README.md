@@ -15,7 +15,12 @@ See also https://github.com/alexanderwolz/android_device_catfish_tools for addit
 
 ## 🛠️ Installation
 
-checkout this repository to ```$AOSP_HOME/device/alexanderwolz/catfish```
+Clone this repository to ```$AOSP_HOME/device/alexanderwolz/catfish```
+
+```
+cd $AOSP_HOME
+git clone https://github.com/alexanderwolz/android_device_catfish.git device/alexanderwolz/catfish
+```
 
 ## ⚙️ Build
 

@@ -15,6 +15,13 @@ See also https://github.com/alexanderwolz/android_device_catfish_tools for addit
 
 ## 🛠️ Installation
 
-1. checkout this repository to ```$AOSP_HOME/device/alexanderwolz/catfish```
+checkout this repository to ```$AOSP_HOME/device/alexanderwolz/catfish```
 
-2. Build device with ```lunch catfish-eng``` and ```m -j$(nproc --all)```
+## ⚙️ Build
+
+This follows the normal AOSP approach, e.g.
+1. ```source build/envsetup.sh```
+2. ```lunch catfish-eng```
+3. ```rm -rf /aosp/out``` (cleans build target folder)
+4. ```m -j$(nproc --all)```
+5. See compiled files at ```$AOSP_HOME/out/target/product/catfish```

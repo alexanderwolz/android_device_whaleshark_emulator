@@ -17,10 +17,8 @@ See also https://github.com/alexanderwolz/android_device_catfish_tools for addit
 
 Clone this repository to ```$AOSP_HOME/device/alexanderwolz/catfish```
 
-```
-cd $AOSP_HOME
-git clone https://github.com/alexanderwolz/android_device_catfish.git device/alexanderwolz/catfish
-```
+1. ```cd $AOSP_HOME```
+2. ```git clone https://github.com/alexanderwolz/android_device_catfish.git device/alexanderwolz/catfish```
 
 ## ⚙️ Build
 

@@ -44,9 +44,9 @@ Copy the appropriate avd folder to your localhost into *$HOME/.android/avd*
 
 ```mkdir -p $HOME/.android/avd```
 
-```cp -r avd/whaleshark_api_31.avd $HOME/.android/avd/whaleshark_api_31.avd```
+```cp -r avd/whaleshark-31.avd $HOME/.android/avd/whaleshark-31.avd```
 
-```cp avd/whaleshark_api_31.ini $HOME/.android/avd/whaleshark_api_31.ini```
+```cp avd/whaleshark-31.ini $HOME/.android/avd/whaleshark-31.ini```
 
 
 ### Run the Emulator
@@ -55,4 +55,10 @@ Install the Android SDK and set ```$ANDROID_SDK_HOME```. See also [this](https:/
 
 Install the Android Emulator with version 33.1.23.0 or higher.
 
-Execute the Emulator: ```$ANDROID_SDK_HOME/emulator/emulator -avd whaleshark_api_31 -show-kernel```
+Execute the Emulator: ```$ANDROID_SDK_HOME/emulator/emulator -avd whaleshark-31 -show-kernel```
+
+## 🧑‍💻 Known Issues
+
+### General
+
+1. The first start does hang in the *"Phone is starting"* state. A quick ```adb root && adb reboot``` helps

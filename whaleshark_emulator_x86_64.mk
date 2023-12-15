@@ -62,10 +62,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
 # All components inherited here go to product image
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_product.mk)
 
-# All components inherited here go to vendor or vendor_boot image (from sdk_phone_x86_64.mk)
+# All components inherited here go to vendor or vendor_boot image (from sdk_phone64_x86_64.mk)
 $(call inherit-product, device/generic/goldfish/x86_64-vendor.mk)
-$(call inherit-product, device/generic/goldfish/64bitonly/product/emulator_vendor.mk)
-$(call inherit-product, device/generic/goldfish/emulator_x86_64/device.mk)
+$(call inherit-product, device/generic/goldfish/64bitonly/product/emulator64_vendor.mk)
+$(call inherit-product, device/generic/goldfish/emulator64_x86_64/device.mk)
 
 EMULATOR_VENDOR_NO_SOUND := true
 

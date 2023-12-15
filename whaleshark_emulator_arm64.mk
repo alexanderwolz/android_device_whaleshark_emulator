@@ -1,9 +1,13 @@
-# Copyright (C) 2022 Alexander Wolz, mail@alexanderwolz.de
+# Copyright (C) 2023 Alexander Wolz, mail@alexanderwolz.de
 # based on:
 #	- device/generic/goldfish/car/sdk_car_arm64.mk
 #	- device/generic/car/emulator/aosp_car_emulator.mk
 #	- device/generic/goldfish/64bitonly/product/sdk_phone64_arm64.mk
 #	- build/make/target/product/sdk_phone_arm64.mk (deprecated?)
+
+# TODO check out: with android-14, there now is:
+# device/generic/car/aosp_car_arm64.mk
+# device/generic/car/sdk_car_arm64.mk
 
 # Use own source properties
 PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := $(LOCAL_PATH)/source.properties
@@ -69,7 +73,14 @@ $(call inherit-product, device/generic/goldfish/emulator64_arm64/device.mk)
 
 EMULATOR_VENDOR_NO_SOUND := true
 
+# Use common definitions
+$(call inherit-product, device/alexanderwolz/whaleshark/common/whaleshark_common.mk)
+
+# Device identifier. This must come after all inclusions
 PRODUCT_BRAND := alexanderwolz
-PRODUCT_NAME := catfish
-PRODUCT_DEVICE := catfish
-PRODUCT_MODEL := Catfish Android SDK
+PRODUCT_MANUFACTURER := alexanderwolz
+PRODUCT_NAME := whaleshark_emulator_arm64
+PRODUCT_MODEL := Whale Shark AAOS on ARM64 Emulator
+
+# we reuse the original device configuration from device/generic/goldfish/emulator64_arm64
+PRODUCT_DEVICE := emulator64_arm64

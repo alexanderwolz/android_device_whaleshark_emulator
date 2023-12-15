@@ -1,7 +1,7 @@
-# Copyright (C) 2022 Alexander Wolz, mail@alexanderwolz.de
+# Copyright (C) 2023 Alexander Wolz, mail@alexanderwolz.de
 
 PRODUCT_MAKEFILES := \
-	catfish:$(LOCAL_DIR)/catfish.mk 
+	whaleshark_emulator_arm64:$(LOCAL_DIR)/whaleshark_emulator_arm64.mk
 
 COMMON_LUNCH_CHOICES := \
-	catfish-eng 
+	whaleshark_emulator_arm64-userdebug

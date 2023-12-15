@@ -5,10 +5,6 @@
 #	- device/generic/goldfish/64bitonly/product/sdk_phone64_arm64.mk
 #	- build/make/target/product/sdk_phone_arm64.mk (deprecated?)
 
-# TODO check out: with android-14, there now is:
-# device/generic/car/aosp_car_arm64.mk
-# device/generic/car/sdk_car_arm64.mk
-
 # Use own source properties
 PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := $(LOCAL_PATH)/source.properties
 

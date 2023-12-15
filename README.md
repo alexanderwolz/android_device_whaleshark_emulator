@@ -11,14 +11,14 @@
 
 This device configuration is intented to be run in an Android Emulator on ARM64-based hosts, such as Apple MacBook Pro with M1 processor
 
-See also [aosp_docker](https://github.com/alexanderwolz/aosp_docker) for a Docker-based tool chain and [android_tools](https://github.com/alexanderwolz/android_device_whaleshark_tools) for additonal sync and flash scripts.
+See also [aosp_docker](https://github.com/alexanderwolz/aosp_docker) for a Docker-based tool chain and [android-build-tools](https://github.com/alexanderwolz/android-build-tools) for additonal sync and flash scripts.
 
 
 ## 🛠️ Setup
 
 ### Download AOSP repository
 
-See [here](https://github.com/alexanderwolz/android_device_whaleshark_manifest) for setup of AOSP repository and dependencies.
+See [manifest](https://github.com/alexanderwolz/android_device_whaleshark_manifest/tree/android-12) for setup of AOSP repository and dependencies.
 
 
 ## ⚙️ Build the product
@@ -30,11 +30,29 @@ This follows the normal AOSP approach, e.g.
 4. ```m -j$(nproc --all)```
 5. See compiled files at ```$AOSP_HOME/out/target/product/emulator64_arm64```
 
-## 🖥️ Create Android Virtual Device (AVD)
-
-Consultate [this repository](https://github.com/alexanderwolz/android_device_whaleshark_tools) for predefined AVD configurations and setup instructions.
 
 ## ✨ Flash the build
 
-You can use the [sync_remote_emulator_images.sh](https://github.com/alexanderwolz/android_device_whaleshark_tools/blob/main/bin/sync_remote_emulator_images.sh) script from [here](https://github.com/alexanderwolz/android_device_whaleshark_tools) to directly sync the emulator images to your ```$ANDROID_SDK_HOME/system-images``` folder
+You can use the [sync_remote_emulator_images.sh](https://github.com/alexanderwolz/android-build-tools/blob/main/bin/sync_remote_emulator_images.sh) script from [here](https://github.com/alexanderwolz/android-build-tools) to directly sync the emulator images to your ```$ANDROID_SDK_HOME/system-images``` folder.
 
+
+## 🖥️ Android Virtual Device (AVD) configuration
+
+### Setup
+
+Copy the appropriate avd folder to your localhost into *$HOME/.android/avd*
+
+```mkdir -p $HOME/.android/avd```
+
+```cp -r avd/whaleshark_api_31.avd $HOME/.android/avd/whaleshark_api_31.avd```
+
+```cp avd/whaleshark_api_31.ini $HOME/.android/avd/whaleshark_api_31.ini```
+
+
+### Run the Emulator
+
+Install the Android SDK and set ```$ANDROID_SDK_HOME```. See also [this](https://developer.android.com/studio).
+
+Install the Android Emulator with version 33.1.23.0 or higher.
+
+Execute the Emulator: ```$ANDROID_SDK_HOME/emulator/emulator -avd whaleshark_api_31 -show-kernel```

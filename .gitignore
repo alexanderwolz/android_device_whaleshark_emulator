@@ -1,6 +1,6 @@
 avd/*
-!avd/wipe_whaleshark_api_31.sh
-!avd/whaleshark_api_31.ini
-!avd/whaleshark_api_31.avd
-avd/whaleshark_api_31.avd/*
-!avd/whaleshark_api_31.avd/config.ini
+!avd/wipe_whaleshark*.sh
+!avd/whaleshark*.ini
+!avd/whaleshark*.avd
+avd/whaleshark*.avd/*
+!avd/whaleshark*.avd/config.ini

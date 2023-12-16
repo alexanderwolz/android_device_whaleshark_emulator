@@ -1,7 +1,7 @@
-# Whale Shark - an AAOS device configuration for ARM64-based Android Emulator hosts
+# Whale Shark - an AAOS device configuration for Android Emulator hosts
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/alexanderwolz/android_device_whaleshark_emulator)
-![GitHub](https://img.shields.io/badge/arch-arm64v8-orange)
+![GitHub](https://img.shields.io/badge/arch-arm64v8;_x86__64-orange)
 ![GitHub](https://img.shields.io/github/license/alexanderwolz/android_device_whaleshark_emulator)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/alexanderwolz/android_device_whaleshark_emulator)
 ![GitHub all releases](https://img.shields.io/github/downloads/alexanderwolz/android_device_whaleshark_emulator/total?color=informational)
@@ -9,7 +9,7 @@
 
 ## 🧑‍💻 About
 
-This device configuration is intented to be run in an Android Emulator on ARM64-based hosts, such as Apple MacBook Pro with M1 processor
+This device configuration is intented to be run on 64-bit-based Android Emulators, such as Apple MacBook Pro with M1 processor.
 
 See also [aosp_docker](https://github.com/alexanderwolz/aosp_docker) for a Docker-based tool chain and [android-build-tools](https://github.com/alexanderwolz/android-build-tools) for additonal sync and flash scripts.
 

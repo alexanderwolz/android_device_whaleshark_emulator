@@ -18,7 +18,7 @@ See also [aosp_docker](https://github.com/alexanderwolz/aosp_docker) for a Docke
 
 ### Download AOSP repository
 
-See [manifest](https://github.com/alexanderwolz/android_device_whaleshark_manifest/tree/android-13) for setup of AOSP repository and dependencies.
+See [manifest](https://github.com/alexanderwolz/android_device_whaleshark_manifest/tree/android-14) for setup of AOSP repository and dependencies.
 
 
 ## ⚙️ Build the product
@@ -44,9 +44,9 @@ Copy the appropriate avd folder to your localhost into *$HOME/.android/avd*
 
 ```mkdir -p $HOME/.android/avd```
 
-```cp -r avd/whaleshark-33.avd $HOME/.android/avd/whaleshark-33.avd```
+```cp -r avd/whaleshark-34.avd $HOME/.android/avd/whaleshark-34.avd```
 
-```cp avd/whaleshark-33.ini $HOME/.android/avd/whaleshark-33.ini```
+```cp avd/whaleshark-34.ini $HOME/.android/avd/whaleshark-34.ini```
 
 
 ### Run the Emulator
@@ -55,4 +55,4 @@ Install the Android SDK and set ```$ANDROID_SDK_HOME```. See also [this](https:/
 
 Install the Android Emulator with version 33.1.23.x or higher.
 
-Execute the Emulator: ```$ANDROID_SDK_HOME/emulator/emulator -avd whaleshark-33 -show-kernel```
+Execute the Emulator: ```$ANDROID_SDK_HOME/emulator/emulator -avd whaleshark-34 -show-kernel```

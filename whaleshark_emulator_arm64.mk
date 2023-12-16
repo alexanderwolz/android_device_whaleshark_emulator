@@ -5,8 +5,10 @@
 #	- device/generic/goldfish/64bitonly/product/sdk_phone64_arm64.mk
 #	- build/make/target/product/sdk_phone_arm64.mk (deprecated?)
 
-## Android Automotive
+# TODO check out: with android-14, there now is:
+# device/generic/car/sdk_car_arm64.mk
 
+## Android Automotive
 PRODUCT_PACKAGE_OVERLAYS := device/generic/car/common/overlay
 
 # Enable Setup Wizard. This overrides the setting in emulator_vendor.mk

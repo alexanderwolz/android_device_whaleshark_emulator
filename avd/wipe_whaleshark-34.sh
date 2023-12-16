@@ -1,7 +1,7 @@
 #!/bin/bash
 # Copyright (C) 2023 Alexander Wolz <mail@alexanderwolz.de>
 
-AVD_FOLDER="$HOME/.android/avd/whaleshark-33.avd"
+AVD_FOLDER="$HOME/.android/avd/whaleshark-34.avd"
 
 pushd "$AVD_FOLDER" >/dev/null || exit 1
 echo "Wiping $AVD_FOLDER"

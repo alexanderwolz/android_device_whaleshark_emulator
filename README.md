@@ -18,7 +18,7 @@ See also [aosp_docker](https://github.com/alexanderwolz/aosp_docker) for a Docke
 
 ### Download AOSP repository
 
-See [manifest](https://github.com/alexanderwolz/android_device_whaleshark_manifest/tree/android-12) for setup of AOSP repository and dependencies.
+See [manifest](https://github.com/alexanderwolz/android_device_whaleshark_manifest/tree/android-13) for setup of AOSP repository and dependencies.
 
 
 ## ⚙️ Build the product
@@ -44,21 +44,15 @@ Copy the appropriate avd folder to your localhost into *$HOME/.android/avd*
 
 ```mkdir -p $HOME/.android/avd```
 
-```cp -r avd/whaleshark-31.avd $HOME/.android/avd/whaleshark-31.avd```
+```cp -r avd/whaleshark-33.avd $HOME/.android/avd/whaleshark-33.avd```
 
-```cp avd/whaleshark-31.ini $HOME/.android/avd/whaleshark-31.ini```
+```cp avd/whaleshark-33.ini $HOME/.android/avd/whaleshark-33.ini```
 
 
 ### Run the Emulator
 
 Install the Android SDK and set ```$ANDROID_SDK_HOME```. See also [this](https://developer.android.com/studio).
 
-Install the Android Emulator with version 29.1.x or higher.
+Install the Android Emulator with version 33.1.23.x or higher.
 
-Execute the Emulator: ```$ANDROID_SDK_HOME/emulator/emulator -avd whaleshark-31 -show-kernel```
-
-## 🧑‍💻 Known Issues
-
-### General
-
-1. The first start does hang in the *"Phone is starting"* state. A quick ```adb root && adb reboot``` helps
+Execute the Emulator: ```$ANDROID_SDK_HOME/emulator/emulator -avd whaleshark-33 -show-kernel```

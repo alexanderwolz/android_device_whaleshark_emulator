@@ -5,9 +5,6 @@
 #	- device/generic/goldfish/64bitonly/product/sdk_phone64_arm64.mk
 #	- build/make/target/product/sdk_phone_arm64.mk (deprecated?)
 
-# Use own source properties
-PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := $(LOCAL_PATH)/source.properties
-
 ## Android Automotive
 
 PRODUCT_PACKAGE_OVERLAYS := device/generic/car/common/overlay

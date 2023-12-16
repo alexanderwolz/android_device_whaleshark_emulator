@@ -1,4 +1,4 @@
-# Whale Shark - an AAOS device configuration for Android Emulator hosts
+# Whale Shark - an AAOS device configuration for 64-bit-based Android Emulator hosts
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/alexanderwolz/android_device_whaleshark_emulator)
 ![GitHub](https://img.shields.io/badge/arch-arm64v8;_x86__64-orange)
@@ -9,7 +9,7 @@
 
 ## 🧑‍💻 About
 
-This device configuration is intented to be run on 64-bit-based Android Emulators, such as Apple MacBook Pro with M1 processor.
+This device configuration is intented to be run on Android Virtual Device (AVD) emulator hosts with a 64-bit CPU, such as the new MacBook generations with Apple Silicon processor (M1/M2/M3).
 
 See also [aosp_docker](https://github.com/alexanderwolz/aosp_docker) for a Docker-based tool chain and [android-build-tools](https://github.com/alexanderwolz/android-build-tools) for additonal sync and flash scripts.
 
@@ -53,7 +53,7 @@ Copy the appropriate avd folder to your localhost into *$HOME/.android/avd*
 
 Install the Android SDK and set ```$ANDROID_SDK_HOME```. See also [this](https://developer.android.com/studio).
 
-Install the Android Emulator with version 33.1.23.0 or higher.
+Install the Android Emulator with version 29.1.x or higher.
 
 Execute the Emulator: ```$ANDROID_SDK_HOME/emulator/emulator -avd whaleshark-31 -show-kernel```
 

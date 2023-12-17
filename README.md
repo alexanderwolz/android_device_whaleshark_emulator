@@ -11,7 +11,7 @@
 
 This device configuration is intented to be run on Android Virtual Device (AVD) emulator hosts with a 64-bit CPU, such as the new MacBook generations with Apple Silicon processor (M1/M2/M3).
 
-See also [aosp_docker](https://github.com/alexanderwolz/aosp_docker) for a Docker-based tool chain and [android-build-tools](https://github.com/alexanderwolz/android-build-tools) for additonal sync and flash scripts.
+See also [aosp-docker](https://github.com/alexanderwolz/aosp-docker) for a Docker-based tool chain and [android-build-tools](https://github.com/alexanderwolz/android-build-tools) for additonal sync and flash scripts.
 
 
 ## 🛠️ Setup
@@ -28,7 +28,7 @@ This follows the normal AOSP approach, e.g.
 2. ```lunch whaleshark_emulator_arm64-userdebug```
 3. ```make clobber``` (optionally, cleans target folder)
 4. ```m -j$(nproc --all)```
-5. See compiled files at ```$AOSP_HOME/out/target/product/emulator64_arm64```
+5. See compiled files at ```$AOSP_HOME/out/target/product/emulator_car64_arm64```
 
 
 ## ✨ Flash the build
@@ -51,8 +51,8 @@ Copy the appropriate avd folder to your localhost into *$HOME/.android/avd*
 
 ### Run the Emulator
 
-Install the Android SDK and set ```$ANDROID_SDK_HOME```. See also [this](https://developer.android.com/studio).
+Install the Android SDK and set ```$ANDROID_HOME```. See also [this](https://developer.android.com/studio).
 
 Install the Android Emulator with version 33.1.23.x or higher.
 
-Execute the Emulator: ```$ANDROID_SDK_HOME/emulator/emulator -avd whaleshark-34 -show-kernel```
+Execute the Emulator: ```$ANDROID_HOME/emulator/emulator -avd whaleshark-34 -show-kernel```

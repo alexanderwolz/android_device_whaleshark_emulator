@@ -2,29 +2,14 @@
 # product based on:
 #	- device/generic/car/sdk_car_arm64.mk
 
+# Use new multi display approach
+EMULATOR_DYNAMIC_MULTIDISPLAY_CONFIG := false
+
 # Since Android 14: derive directly from device/generic/car/sdk_car_arm64.mk
 $(call inherit-product, device/generic/car/sdk_car_arm64.mk)
 
 # Use common definitions
 $(call inherit-product, device/alexanderwolz/whaleshark/common/whaleshark_common.mk)
-
-# Enable cluster display
-BUILD_EMULATOR_CLUSTER_DISPLAY := false
-ENABLE_CLUSTER_OS_DOUBLE := false
-
-# Cluster / co-driver display
-ifeq (true,$(BUILD_EMULATOR_CLUSTER_DISPLAY))
-PRODUCT_COPY_FILES += \
-    device/generic/car/emulator/cluster/display_settings.xml:system/etc/display_settings.xml
-PRODUCT_PRODUCT_PROPERTIES += \
-    hwservicemanager.external.displays=1,400,600,120,0 \
-    persist.service.bootanim.displays=8140900251843329
-ifeq (true,$(ENABLE_CLUSTER_OS_DOUBLE))
-DEVICE_PACKAGE_OVERLAYS += device/generic/car/emulator/cluster/osdouble_overlay
-else
-DEVICE_PACKAGE_OVERLAYS += device/generic/car/emulator/cluster/overlay
-endif  # ENABLE_CLUSTER_OS_DOUBLE
-endif  # BUILD_EMULATOR_CLUSTER_DISPLAY
 
 EMULATOR_VENDOR_NO_SOUND := true
 

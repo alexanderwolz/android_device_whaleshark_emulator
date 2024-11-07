@@ -1,4 +1,4 @@
-# Copyright (C) 2023 Alexander Wolz, mail@alexanderwolz.de
+# Copyright (C) 2024 Alexander Wolz, mail@alexanderwolz.de
 # product based on:
 #	- device/generic/car/sdk_car_arm64.mk
 

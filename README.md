@@ -30,6 +30,8 @@ This follows the normal AOSP approach, e.g.
 4. ```m -j$(nproc --all)```
 5. See compiled files at ```$AOSP_HOME/out/target/product/emulator_car64_arm64```
 
+Info: With Android 15, release flags have been introduced. See also aconfigs in ```${AOSP_HOME}/build/release```
+
 
 ## ✨ Flash the build
 

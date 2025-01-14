@@ -25,7 +25,7 @@ See [manifest](https://github.com/alexanderwolz/android_device_whaleshark_manife
 
 This follows the normal AOSP approach, e.g.
 1. ```source build/envsetup.sh```
-2. ```lunch whaleshark_emulator_arm64-trunk_staging-userdebug```
+2. ```lunch whaleshark_car_emulator_arm64-trunk_staging-userdebug```
 3. ```make clobber``` (optionally, cleans target folder)
 4. ```m -j$(nproc --all)```
 5. See compiled files at ```$AOSP_HOME/out/target/product/emulator_car64_arm64```

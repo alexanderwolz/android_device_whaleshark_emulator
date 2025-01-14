@@ -1,4 +1,4 @@
-# Copyright (C) 2024 Alexander Wolz, mail@alexanderwolz.de
+# Copyright (C) 2025 Alexander Wolz, mail@alexanderwolz.de
 # product based on:
 #	- device/generic/car/sdk_car_arm64.mk
 
@@ -16,7 +16,7 @@ EMULATOR_VENDOR_NO_SOUND := true
 # Device identifier. This must come after all inclusions
 PRODUCT_BRAND := alexanderwolz
 PRODUCT_MANUFACTURER := alexanderwolz
-PRODUCT_NAME := whaleshark_emulator_arm64
+PRODUCT_NAME := whaleshark_car_emulator_arm64
 PRODUCT_MODEL := Whale Shark AAOS on ARM64 Emulator
 
 # we reuse the original device configuration from device/generic/car/emulator_car64_arm64

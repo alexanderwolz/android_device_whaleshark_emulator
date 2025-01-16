@@ -46,9 +46,9 @@ Copy the appropriate avd folder to your localhost into *$HOME/.android/avd*
 
 ```mkdir -p $HOME/.android/avd```
 
-```cp -r avd/whaleshark-35.avd $HOME/.android/avd/whaleshark-35.avd```
+```cp -r avd/arm64/whaleshark-35.avd $HOME/.android/avd/whaleshark-35.avd```
 
-```cp avd/whaleshark-35.ini $HOME/.android/avd/whaleshark-35.ini```
+```cp avd/arm64/whaleshark-35.ini $HOME/.android/avd/whaleshark-35.ini```
 
 
 ### Run the Emulator
